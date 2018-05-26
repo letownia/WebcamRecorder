@@ -1,0 +1,9 @@
+version: 1.0
+
+database:
+  url: //localhost:1521/xe
+  poolSize: 5
+  password: epod
+  username: letownia
+video:
+  storageDirectory: dupaDirectory

@@ -6,4 +6,9 @@ database:
   password: epod
   username: letownia
 video:
-  storageDirectory: dupaDirectory
+  storageDirectory: output
+  initialDelaySeconds: 5
+  intervalMilliseconds: 1000
+previewWindow:
+  width: 500
+  height: 400

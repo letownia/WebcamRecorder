@@ -3,10 +3,10 @@ package com.lojasiewicz.config;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class WebcamRecorderConfig {
-    public static WebcamRecorderConfig globalConfig;
     private String version;
     private Video video;
     private Database database;
+    private PreviewWindow previewWindow;
 
     public Database getDatabase() {
         return database;
@@ -37,7 +37,38 @@ public class WebcamRecorderConfig {
         this.video = video;
     }
 
+    public PreviewWindow getPreviewWindow() {
+        return previewWindow;
+    }
+
+    public void setPreviewWindow(PreviewWindow previewWindow) {
+        this.previewWindow = previewWindow;
+    }
+
+    public static class PreviewWindow{
+        private int width;
+        private int height;
+
+        public int getWidth() {
+            return width;
+        }
+
+        public void setWidth(int width) {
+            this.width = width;
+        }
+
+        public int getHeight() {
+            return height;
+        }
+
+        public void setHeight(int height) {
+            this.height = height;
+        }
+    }
+
     public static class Video{
+        private int initialDelaySeconds;
+        private int intervalMilliseconds;
         private String storageDirectory;
 
         public String getStorageDirectory() {
@@ -51,6 +82,22 @@ public class WebcamRecorderConfig {
         @Override
         public String toString() {
             return ToStringBuilder.reflectionToString(this);
+        }
+
+        public int getInitialDelaySeconds() {
+            return initialDelaySeconds;
+        }
+
+        public void setInitialDelaySeconds(int initialDelaySeconds) {
+            this.initialDelaySeconds = initialDelaySeconds;
+        }
+
+        public int getIntervalMilliseconds() {
+            return intervalMilliseconds;
+        }
+
+        public void setIntervalMilliseconds(int intervalMilliseconds) {
+            this.intervalMilliseconds = intervalMilliseconds;
         }
     }
 
